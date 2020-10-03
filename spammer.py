@@ -19,7 +19,7 @@ def main():
     print("[2] ACTUALIZAR SPAMER.")
     print("[3] SALIR.")
     print('')
-    number = input("\033[1m\033[34mIngrese el numero de celular: \033[0m")
+    number = input("\033[1m\033[34mEscoge una opción: \033[0m")
     if number != "3":
         try:
             requests.get("http://google.com", verify=True)
@@ -43,7 +43,7 @@ def main():
         banner()
         update = input("\033[1m\033[34m¿Estás seguro de que quieres actualizar? \033[0m(y/n) ")
         if update == "y":
-            os.system("cd && rm -rf ~/spammer && git clone https://github.com/cludeex/spammer && python ~/spammer/spammer.py")
+            os.system("cd && rm -rf ~/spammer && git clone https://github.com/ImAMadDev/spammer && python ~/spammer/spammer.py")
             exit()
         else:
             main()
