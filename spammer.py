@@ -71,7 +71,7 @@ def start_spam(phone):
         email = "{}@gmail.com".format(name)
     phone9 = phone[1:]
     banner()
-    print(f"Телефон: \033[1m\033[34m{phone}\n\033[0mEl spamer se esta ejecutando.\nPara detener - Presione Ctrl+Z")
+    print(f"Número: \033[1m\033[34m{phone}\n\033[0mEl spamer se esta ejecutando.\nPara detener - Presione Ctrl+Z")
     while True:
         try:
             formatted_phone = format_phone(phone, "+# (###) ###-##-##")
