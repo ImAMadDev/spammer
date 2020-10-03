@@ -15,21 +15,21 @@ def banner():
 
 def main():
     banner()
-    print("[1] СМС СПАМЕР.")
-    print("[2] ОБНОВИТЬ СПАМЕР.")
-    print("[3] ВЫХОД.")
+    print("[1] SPAMER SMS.")
+    print("[2] ACTUALIZAR SPAMER.")
+    print("[3] SALIR.")
     print('')
-    number = input("\033[1m\033[34mВведите номер пункта: \033[0m")
+    number = input("\033[1m\033[34mIngrese el numero de celular: \033[0m")
     if number != "3":
         try:
             requests.get("http://google.com", verify=True)
         except:
             banner()
-            print("\033[1m\033[31m[!] Нет интернет соединения.\n\033[0m")
+            print("\033[1m\033[31m[!] Sin conexión a Internet.\n\033[0m")
             exit()
     if number == "1":
         banner()
-        phone = input("\033[1m\033[34mВведите номер телефона: \033[0m")
+        phone = input("\033[1m\033[34mIngrese el numero de celular: \033[0m")
         if phone == "":
             main()
         if phone[0] == "+":
@@ -41,7 +41,7 @@ def main():
         start_spam(phone)
     elif number == "2":
         banner()
-        update = input("\033[1m\033[34mВы уверены, что хотите обновить? \033[0m(y/n) ")
+        update = input("\033[1m\033[34m¿Estás seguro de que quieres actualizar? \033[0m(y/n) ")
         if update == "y":
             os.system("cd && rm -rf ~/spammer && git clone https://github.com/cludeex/spammer && python ~/spammer/spammer.py")
             exit()
@@ -49,11 +49,11 @@ def main():
             main()
     elif number == "3":
         banner()
-        print("\033[1m\033[34mДо скорой встречи!\n\033[0m")
+        print("\033[1m\033[34m¡Nos vemos pronto!\n\033[0m")
         exit()
     else:
         banner()
-        print("\033[1m\033[31m[!] Не правильный номер пункта.\n\033[0m")
+        print("\033[1m\033[31m[!] Número de celular incorrecto.\n\033[0m")
         exit()
 
 
@@ -71,7 +71,7 @@ def start_spam(phone):
         email = "{}@gmail.com".format(name)
     phone9 = phone[1:]
     banner()
-    print(f"Телефон: \033[1m\033[34m{phone}\n\033[0mСпамер запущен.\nЧтобы остановить - нажмите Ctrl+Z")
+    print(f"Телефон: \033[1m\033[34m{phone}\n\033[0mEl spamer se esta ejecutando.\nPara detener - Presione Ctrl+Z")
     while True:
         try:
             formatted_phone = format_phone(phone, "+# (###) ###-##-##")
